@@ -1,26 +1,96 @@
-body {
+/* Reset */
+* {
   margin: 0;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1);
+}
+
+/* Container */
+.container {
+  background: #1e3a8a; /* navy blue */
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+#addTaskBtn {
+  padding: 10px 15px;
+  background: lightgreen;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#addTaskBtn:hover {
+  background: #32cd32;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.task-item {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, #3b0764, #0f172a);
-  color: #fff;
+  gap: 8px;
 }
 
-.container {
-  width: 100%;
-  max-width: 480px;
-  padding: 24px;
-  border-radius: 16px;
-  background: rgba(17, 24, 39, 0.85);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+.actions button {
+  margin-left: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.input-section { display:flex; gap:10px; margin-bottom:14px; }
-#taskInput { flex:1; padding:12px; border-radius:10px 0 0 10px; border:none; background:#1e293b; color:#fff; }
-#addTaskBtn { width:48px; border-radius:0 10px 10px 0; background:#22c55e; border:none; color:#fff; cursor:pointer; }
-#taskList { list-style:none; margin:0; padding:0; }
-.task-item { display:flex; align-items:center; justify-content:space-between; background:#1e293b; padding:10px 12px; margin-bottom:10px; border-radius:10px; }
-.task-left { display:flex; align-items:center; gap:10px; }
+/* Completed task style */
+.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
